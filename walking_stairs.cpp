@@ -5,14 +5,14 @@
 
 // ToDo: Exercise 2.d - adapt and implement combinations
 
-unsigned long combinations(int number)
+unsigned long combinations(int number)	// insight: combinations are fibonacci numbers shifted by one step
 {
+	// iterative version of fibonacci except that combinations(2) already is fibonacci(3)
 	if(number <= 0)
 		return 0;
 	if(number == 1){
 		return 1;
 	}
-
 
 	unsigned long fibSum1=1;
 	unsigned long fibSum2=1;
@@ -33,7 +33,11 @@ int main(int argc, char * argv[])
 
 	int n = std::atoi(argv[1]); 
 
-	std::cout << combinations(n) << "\n";
+
+	if(n>92)
+		return 1; // invalid input
+
+	std::cout << combinations(n) << std::endl;
 
 	return 0;
 }

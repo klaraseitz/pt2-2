@@ -20,24 +20,24 @@ int triangular(int number)
 	n2 = -1/2 - sqrt(1/4 + 2*INT_MAX)
 	*/
 	
-	maximum = -0.5 + sqrt(0.25 + 2* (long)INT_MAX);	//Maximum ist meist: 65535
+	maximum = -0.5 + sqrt(0.25 + 2* (long)INT_MAX);	
 
 
-	if(number <= maximum && number > -1){
-		double result = 0.5*number * (number+1);
+	if(number <= maximum && number > -1){	// check for invalid input
+		double result = 0.5*number * (number+1);	// use formulae for calculation
 		return (int)result;}
 	else
 		{return -1;}
 	
 }
 
-void pretty_print(int decimal)
+void pretty_print(int decimal)	// adds decimal points for better reading of large numbers
 {
-	if(decimal == 0){
+	if(decimal == 0){	// no dots needed
 	std::cout << 0;}
 
 	// Länge der Zahl herausfinden:
-	int number = decimal;
+	int number = decimal;	// copy value to find number of digits
 	int counter = 0;
 
 	while (number) { 		// loop till there's nothing left

@@ -6,17 +6,14 @@ int sumcounter;
 
 int fibonacci(int number)
 {
-	// ToDo: Exercise 2.b - return 0 on bad arguments (too large arguments missing)
-
-
-	if(number <= 2){
+	if(number <= 2){	// exit condition
 		sumcounter++;
 		return 1;
 	}
-	if(number<=0){
+	if(number<=0){	// check for negative numbers (and 0)
 		return 0;
 	}
-	else{
+	else{	// calculate fibonacci numbers
 		sumcounter++;
 		return fibonacci(number-1)+fibonacci(number-2);
 	}
@@ -31,9 +28,11 @@ int main(int argc, char * argv[])
 
 	int n = std::atoi(argv[1]); 
 
-	// ToDo: Exercise 2.c - print calculation steps
+	if(n>46)	// more numbers take too long to calculate and with integer on our system 46 is the last possible number to be calculated
+				// found out by using the Moivre Binet Formulae to calculate n in fib(n) < INT_MAX (here: 2147483647)
+		return 1; // input too large for integer
 
-	std::cout << n << " : " << fibonacci(n); // muss in extra Zeile stehen, damit Sumcounter berechnet wird vor der Ausgabe
+	std::cout << n << " : " << fibonacci(n); // ((insight: muss in extra Zeile stehen, damit Sumcounter berechnet wi2147483647rd vor der Ausgabe))
 	std::cout << " : #" << sumcounter << "\n";
 
 	return 0;

@@ -5,17 +5,16 @@
 #include <string.h>
 #include <fstream>
 
-int moneyValues[12] = {5000,2000,1000,500,200,100,50,20,10,5,2,1};
-int changeCount[12] = {0};
-int sizeOfChangeCount =sizeof(changeCount) / sizeof(changeCount[0]);
+int moneyValues[12] = {5000,2000,1000,500,200,100,50,20,10,5,2,1}; // list of coin-sizes
+int changeCount[12] = {0}; // array to save the amount of returned coins
+int sizeOfChangeCount =sizeof(changeCount) / sizeof(changeCount[0]); // number of array-elements of changeCount
 
-void change(const int due, const int paid)
+void change(const int due, const int paid)	
 {
 	int changeValue = paid - due;
-	int sizeOfMoneyValues = sizeof(moneyValues) / sizeof(moneyValues[0]);
+	int sizeOfMoneyValues = sizeof(moneyValues) / sizeof(moneyValues[0]); // number of array-elements of moneyValues
 
-	while(changeValue){
-
+	while(changeValue){	// as long as changeValue is not 0 calculate coin to add to changeCount
 		for (int i = 0; i < sizeOfMoneyValues; i++)
 		{
 			if((changeValue - moneyValues[i]) >= 0 ){
@@ -24,11 +23,11 @@ void change(const int due, const int paid)
 				break;
 			}
 		}
-	}//End-While
+	}
 }
 
 
-void writeToFile(int due, int paid, char *filename){	// prints values to file
+void writeToFile(const int due, const int paid, char *filename){	// prints values to file
 	std::ofstream file(std::string (filename) + std::string(".txt"));
 	file << "coin, num\n";
 	for (int i = 0; i < sizeOfChangeCount; i++)
@@ -63,7 +62,8 @@ int main(int argc, char * argv[])
 
 
 	change(due, paid);
-	if(argc == 5 && argv[3] == std::string("-o")){
+
+	if(argc == 5 && argv[3] == std::string("-o")){	// option for output file  selected
 		char *fileName = argv[4];
 		writeToFile(due, paid, fileName);
 	}
@@ -71,10 +71,10 @@ int main(int argc, char * argv[])
 		std::cout << "coin, num \n";
 		
 
-			for (int i = 0; i < sizeOfChangeCount; i++)
+			for (int i = 0; i < sizeOfChangeCount; i++)	// printing change values , no file option chosen
 			{
 				if(changeCount[i] != 0){
-				std::cout << moneyValues[i] << ", " << changeCount[i] << "\n";
+				std::cout << moneyValues[i] << ", " << changeCount[i] << std::endl;
 				}
 			}
 	}

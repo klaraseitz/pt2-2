@@ -1,0 +1,122 @@
+a)
+Vorname:	  [A-Z]([a-z])*(-[A-Z]([a-z])*)*
+Nachname:	  [A-Z][a-z]*(-[A-Z]([a-z])*){0,1}
+Straße:		  [A-Z]([a-z])*.{0,1}((-|" ")[A-Z]([a-z])*.{0,1})*
+Nummer:		  [1-9][0-9]{0,2}[a-z]{0,1}
+Postleitzahl: [1-9][0-9]{4}
+Ort:		  [A-Z]+ ((-|" ")[A-Z][a-z]+)*
+
+
+
+
+blablabalba
+
+blababaa
+blabal
+
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+blablabalba
+
+blababaa
+blabal
+
+
+
+b)
+Adresszusatz:		(c\/o ([a-z]|[0-1])*){0,1}
+3 weitere Vornamen:	([A-Z]([a-z])*(-[A-Z]([a-z])*)*){1,4}
+Doppelnamen in Namen: siehe a)
+
+Zusatz zum Adresszusatz:
+Zwische Adresse und Adresszusatz befindet sich ein Zeilenumbruch ($).
+
